@@ -1,12 +1,17 @@
 package modelo.heranca;
 
+import javax.persistence.DiscriminatorColumn;
+import javax.persistence.DiscriminatorType;
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 
 @Entity
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE) /*juntar tudo numa só tabela deixando campos nulos*/
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)  /*juntar tudo numa só tabela deixando campos nulos*/
+@DiscriminatorColumn(name = "tipo",length = 2, discriminatorType = DiscriminatorType.STRING)
+@DiscriminatorValue("AL")
 public class Aluno {
 	
 	@Id
