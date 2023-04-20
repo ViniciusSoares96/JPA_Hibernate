@@ -6,7 +6,7 @@ import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 
 @Entity
-@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS) /*Para cada classe, tera uma tabela*/
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE) /*juntar tudo numa só tabela deixando campos nulos*/
 public class Aluno {
 	
 	@Id
