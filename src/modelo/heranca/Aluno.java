@@ -9,7 +9,7 @@ import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 
 @Entity
-@Inheritance(strategy = InheritanceType.JOINED)  /*Vai fazer uma junção e gerar outra tabela com os dados dos filhos...netos.... */
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)  /*juntar tudo numa só tabela deixando campos nulos*/
 @DiscriminatorColumn(name = "tipo",length = 2, discriminatorType = DiscriminatorType.STRING)
 @DiscriminatorValue("AL")
 public class Aluno {
